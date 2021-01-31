@@ -8,8 +8,6 @@ class RatingTable(DBTable):
         ("user_id", "BIGINT"),
         ("name", "TEXT"),
         ("added_questions_number", "INTEGER DEFAULT 0"),
-        ("likes", "INTEGER DEFAULT 0"),
-        ("dislikes", "INTEGER DEFAULT 0"),
     ]
 
     def all(self):

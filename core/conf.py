@@ -1,11 +1,11 @@
-import yaml
 import os
 from pathlib import Path
 
+import yaml
 from aiogram import Bot, Dispatcher
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
-from utils.path import get_current_dir
 
+from utils import get_current_dir
 from .db import Database
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,6 +13,7 @@ TOKEN = "1108152066:AAGKqFVY3el4lnHGdGwpnJUvTQlqNf42PhM"
 
 bot = Bot(token=TOKEN, parse_mode="HTML")
 dp = Dispatcher(bot, storage=MemoryStorage())
+
 db = Database()
 
 ADMIN_ID = 399344900
