@@ -6,7 +6,14 @@ from pypika import Table, Query, Column
 
 class Database:
     def __init__(self, db_name):
-        self.connection = psycopg2.connect(database=db_name, user="postgres", password="postgres", host="db")
+        self._connection = self._connect(db_name)
+
+    @staticmethod
+    def _connect(db_name):
+        return psycopg2.connect(database=db_name, user="postgres", password="postgres", host="db")
+
+    def get_connection(self):
+        return self._connection
 
 
 class DBTable:

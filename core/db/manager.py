@@ -5,5 +5,5 @@ from .tables import CustomQuestionsTable, RatingTable
 class Database(DBManager):
     _db = BaseDatabase("db")
 
-    custom_questions = CustomQuestionsTable(_db.connection)
-    rating = RatingTable(_db.connection)
+    custom_questions = CustomQuestionsTable(_db.get_connection())
+    rating = RatingTable(_db.get_connection())
