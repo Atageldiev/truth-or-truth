@@ -4,12 +4,15 @@ from pathlib import Path
 import yaml
 from aiogram import Bot, Dispatcher
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
+from dotenv import load_dotenv
 
 from utils import get_current_dir
 from .db import Database
 
+load_dotenv()
+
 BASE_DIR = Path(__file__).resolve().parent.parent
-TOKEN = "1108152066:AAGKqFVY3el4lnHGdGwpnJUvTQlqNf42PhM"
+TOKEN = os.getenv("TOKEN")
 
 bot = Bot(token=TOKEN, parse_mode="HTML")
 dp = Dispatcher(bot, storage=MemoryStorage())
