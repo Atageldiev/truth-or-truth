@@ -1,7 +1,8 @@
 from aiogram.dispatcher import FSMContext
 from aiogram.types import Message
 
-from core.conf import dp, bot, db, ADMIN_ID
+from core.conf import dp, bot, ADMIN_ID
+from core import db
 from core.states import AddQuestionStates
 from utils.decorators import check_existance, Chats
 from utils.filters import get_command_filter

@@ -1,6 +1,7 @@
 from aiogram.types import Message
 
-from core.conf import dp, db
+from core.conf import dp
+from core import db
 from utils.filters import get_command_filter
 
 command_rating_filter = get_command_filter("rating")

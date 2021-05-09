@@ -7,7 +7,6 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from dotenv import load_dotenv
 
 from utils import get_current_dir
-from .db import Database
 
 load_dotenv()
 
@@ -16,8 +15,6 @@ TOKEN = os.getenv("TOKEN")
 
 bot = Bot(token=TOKEN, parse_mode="HTML")
 dp = Dispatcher(bot, storage=MemoryStorage())
-
-db = Database()
 
 ADMIN_ID = 399344900
 VOTE_TIME = 15

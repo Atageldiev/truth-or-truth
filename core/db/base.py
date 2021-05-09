@@ -10,7 +10,8 @@ class Database:
 
     @staticmethod
     def _connect(db_name):
-        return psycopg2.connect(database=db_name, user="postgres", password="postgres", host="db")
+        return psycopg2.connect(database=db_name, user="postgres", password="postgres",
+                                host="localhost")
 
     def get_connection(self):
         return self._connection
@@ -65,7 +66,3 @@ class DBTable:
     @property
     def chat(self):
         return Chat().get_current()
-
-
-class DBManager:
-    _db: Database = NotImplemented

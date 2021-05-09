@@ -1,1 +1,1 @@
-from .manager import Database
+from .manager import custom_questions, rating

@@ -2,13 +2,14 @@ version: "3.8"
 
 services:
   bot:
-    build:
-      context: ./
-      dockerfile: Dockerfile
+    build: .
+    volumes:
+      - ./:/app
     depends_on:
       - db
-    .env_file:
+    env_file:
       - .env
+
   db:
     image: postgres
     restart: always

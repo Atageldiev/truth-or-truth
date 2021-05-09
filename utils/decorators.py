@@ -1,6 +1,6 @@
 from aiogram.types import Message
 
-from core.conf import db
+from core import db
 from .filters import is_private, is_group, is_supergroup
 
 
